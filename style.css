@@ -85,3 +85,24 @@ button:hover {
 button:active {
     transform: scale(0.98);
 }
+/* Estilos para a mensagem de resultado */
+.card-resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    color: #2e7d32;
+}
+
+.card-resultado p {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.erro {
+    color: #d32f2f !important;
+    text-align: center !important;
+    margin-top: 15px;
+}
