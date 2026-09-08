@@ -15,19 +15,19 @@ btn_calcular.onclick = function() {
     var classificacao = ""
 
     if (calculo < 18.5) {
-        classificacao = "Magreza"
+        classificacao = "Baixo peso"
     }
     else if (calculo >= 18.5 && calculo <= 24.9) {
         classificacao = "Peso Normal"
     }
     else if (calculo >= 25 && calculo <= 29.9) {
-        classificacao = "Sobrepeso"
+        classificacao = "Obesidade grau 1"
     }
     else if (calculo >= 30 && calculo <= 39.9) {
-        classificacao = "Obesidade"
+        classificacao = "Obesidade grau 2"
     }
     else if (calculo >= 40) {
-        classificacao = "Obesidade Grave"
+        classificacao = "Obesidade Grau 3"
     }
 
     // Exibe o resultado direto na tela via innerHTML
