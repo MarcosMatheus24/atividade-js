@@ -1,108 +1,161 @@
-/* Importação da fonte Montserrat */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+/* Importação de fontes: Playfair Display (Título) e Plus Jakarta Sans (Texto/Inputs) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
 body {
     min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* Fundo suave em gradiente pastel com formas abstratas leves */
+    background-color: #f7f5fb;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(224, 218, 245, 0.6) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(230, 240, 235, 0.7) 0px, transparent 50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Imagem de Fundo (Tema Saúde/Bem-Estar) via Unsplash com overlay suave */
-    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(220, 248, 230, 0.7)), 
-                url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    padding: 20px;
+    color: #2b2a33;
 }
 
-/* Card central com efeito Glassmorphism suave */
+/* Container com efeito de elevação leve e bordas muito arredondadas */
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 128, 96, 0.15);
+    background: #ffffff;
+    padding: 48px 40px;
+    border-radius: 28px;
+    box-shadow: 0 20px 40px -15px rgba(103, 80, 164, 0.08);
     width: 100%;
-    max-width: 400px;
-    text-align: center;
-    border-top: 6px solid #2e7d32; /* Verde Saúde */
+    max-width: 440px;
+    border: 1px solid rgba(220, 215, 235, 0.6);
 }
 
+/* DESTAQUE PRINCIPAL DO TÍTULO */
 h1 {
-    color: #1b5e20;
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #4a3e6d; /* Roxo/Lavanda profundo */
+    text-align: center;
+    margin-bottom: 32px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    position: relative;
+    padding-bottom: 12px;
 }
 
+/* Detalhe elegante sob o título */
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background-color: #a792e5;
+    border-radius: 2px;
+}
+
+/* Rótulos dos inputs */
 p {
-    color: #37474f;
+    font-size: 0.85rem;
     font-weight: 600;
-    text-align: left;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #726d85;
+    margin-top: 20px;
+    margin-bottom: 8px;
 }
 
+/* Inputs minimalistas sem borda padrão (estilo 'pill' / pílula) */
 input {
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #b2dfdb;
-    border-radius: 8px;
+    padding: 14px 20px;
+    border: 1.5 solid transparent;
+    background-color: #f2f0f7;
+    border-radius: 12px;
     font-size: 1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #2b2a33;
     outline: none;
-    transition: all 0.3s ease;
-    background-color: #f9fbf9;
+    transition: all 0.25s ease;
 }
 
 input:focus {
-    border-color: #00897b;
-    box-shadow: 0 0 8px rgba(0, 137, 123, 0.3);
     background-color: #ffffff;
+    border: 1.5px solid #8e75db;
+    box-shadow: 0 0 0 4px rgba(142, 117, 219, 0.12);
 }
 
+/* Botão em tom Pastel Quente/Sálvia para contraste suave */
 button {
     width: 100%;
-    margin-top: 25px;
-    padding: 14px;
-    background-color: #2e7d32; /* Verde principal */
+    margin-top: 28px;
+    padding: 16px;
+    background-color: #5c7869; /* Verde Sálvia Elegante */
     color: #ffffff;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
     font-weight: 600;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 button:hover {
-    background-color: #1b5e20; /* Verde mais escuro no hover */
+    background-color: #486053;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(92, 120, 105, 0.25);
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: translateY(0);
 }
-/* Estilos para a mensagem de resultado */
+
+/* Estilização da área de resultado gerada pelo JS */
+#resultado {
+    margin-top: 24px;
+}
+
 .card-resultado {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #e8f5e9;
-    border: 1px solid #c8e6c9;
-    border-radius: 8px;
-    color: #2e7d32;
+    background-color: #f7f5fc;
+    border-left: 4px solid #8e75db;
+    padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    animation: fadeIn 0.4s ease;
 }
 
 .card-resultado p {
-    text-align: center;
-    margin: 5px 0;
-    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: normal;
+    color: #4a3e6d;
+    font-size: 0.95rem;
+    margin: 4px 0;
+}
+
+.card-resultado strong {
+    color: #2b2a33;
 }
 
 .erro {
-    color: #d32f2f !important;
-    text-align: center !important;
-    margin-top: 15px;
+    color: #c94a4a !important;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Animação suave de entrada do resultado */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
