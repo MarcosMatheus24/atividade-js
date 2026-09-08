@@ -1,0 +1,87 @@
+/* Importação da fonte Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Imagem de Fundo (Tema Saúde/Bem-Estar) via Unsplash com overlay suave */
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(220, 248, 230, 0.7)), 
+                url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+/* Card central com efeito Glassmorphism suave */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 128, 96, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-top: 6px solid #2e7d32; /* Verde Saúde */
+}
+
+h1 {
+    color: #1b5e20;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+p {
+    color: #37474f;
+    font-weight: 600;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #b2dfdb;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9fbf9;
+}
+
+input:focus {
+    border-color: #00897b;
+    box-shadow: 0 0 8px rgba(0, 137, 123, 0.3);
+    background-color: #ffffff;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    background-color: #2e7d32; /* Verde principal */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #1b5e20; /* Verde mais escuro no hover */
+}
+
+button:active {
+    transform: scale(0.98);
+}
