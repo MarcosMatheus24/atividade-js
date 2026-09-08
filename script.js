@@ -2,12 +2,22 @@ var btn_calcular = document.getElementById("btn")
 var divResultado = document.getElementById("resultado")
 
 btn_calcular.onclick = function() {
-    var peso = parseFloat(document.getElementById("peso").value)
-    var altura = parseFloat(document.getElementById("altura").value) / 100
+    // Pega os valores e substitui vírgula por ponto para poder converter para número
+    var pesoInput = document.getElementById("peso").value.replace(',', '.')
+    var alturaInput = document.getElementById("altura").value.replace(',', '.')
 
-    if(!peso || !altura) {
-        divResultado.innerHTML = "<p class='erro'>Por favor, preencha todos os campos!</p>"
+    var peso = parseFloat(pesoInput)
+    var altura = parseFloat(alturaInput)
+
+    // Validação caso os campos estejam vazios ou inválidos
+    if (isNaN(peso) || isNaN(altura) || peso <= 0 || altura <= 0) {
+        divResultado.innerHTML = "<p class='erro'>Por favor, digite valores válidos!</p>"
         return
+    }
+
+    // Se a altura digitada for maior que 3 (ex: 175), consideramos que foi em centímetros e dividimos por 100
+    if (altura > 3) {
+        altura = altura / 100
     }
 
     var calculo = peso / (altura * altura)
@@ -15,22 +25,22 @@ btn_calcular.onclick = function() {
     var classificacao = ""
 
     if (calculo < 18.5) {
-        classificacao = "Baixo peso"
+        classificacao = "Magreza"
     }
     else if (calculo >= 18.5 && calculo <= 24.9) {
         classificacao = "Peso Normal"
     }
     else if (calculo >= 25 && calculo <= 29.9) {
-        classificacao = "Obesidade grau 1"
+        classificacao = "Sobrepeso"
     }
     else if (calculo >= 30 && calculo <= 39.9) {
-        classificacao = "Obesidade grau 2"
+        classificacao = "Obesidade"
     }
     else if (calculo >= 40) {
-        classificacao = "Obesidade Grau 3"
+        classificacao = "Obesidade Grave"
     }
 
-    // Exibe o resultado direto na tela via innerHTML
+    // Exibe o resultado direto na tela
     divResultado.innerHTML = `
         <div class="card-resultado">
             <p>Seu IMC é: <strong>${imcFormatado}</strong></p>
@@ -38,5 +48,5 @@ btn_calcular.onclick = function() {
         </div>
     `
 
-    console.log(calculo)
+    console.log("IMC:", calculo)
 }

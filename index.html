@@ -11,16 +11,15 @@
         <h1>CÁLCULO DE IMC</h1>
         <form id="imcForm">
             <p>Peso (kg)</p>
-            <input type="number" step="0.1" placeholder="Ex: 70.5" id="peso" required>
+            <input type="text" placeholder="Ex: 70.5 ou 70,5" id="peso" required>
             
-            <p>Altura (cm)</p>
-            <input type="number" placeholder="Ex: 175" id="altura" required>
+            <p>Altura (m ou cm)</p>
+            <input type="text" placeholder="Ex: 1.75 ou 175" id="altura" required>
             
             <br>
             <button type="button" id="btn">Calcular</button>
         </form>
 
-        <!-- Elemento onde o resultado do innerHTML será exibido -->
         <div id="resultado"></div>
     </div>
 
